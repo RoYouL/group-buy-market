@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * 拼团活动实体类
@@ -73,16 +74,11 @@ public class GroupBuyActivity {
      * 活动状态（0创建、1生效、2过期、3废弃）
      */
     private Integer status;
-    
-    /**
-     * 活动开始时间
-     */
-    private LocalDateTime startTime;
-    
-    /**
-     * 活动结束时间
-     */
-    private LocalDateTime endTime;
+
+    /** 活动开始时间 */
+    private Date startTime;
+    /** 活动结束时间 */
+    private Date endTime;
     
     /**
      * 人群标签规则标识

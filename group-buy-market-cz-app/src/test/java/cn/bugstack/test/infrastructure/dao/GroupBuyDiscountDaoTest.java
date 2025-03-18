@@ -1,4 +1,4 @@
-package cn.bugstack.test;
+package cn.bugstack.test.infrastructure.dao;
 
 import cn.bugstack.infrastructure.dao.IGroupBuyDiscountDao;
 import cn.bugstack.infrastructure.dao.po.GroupBuyDiscount;
