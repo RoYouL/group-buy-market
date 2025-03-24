@@ -3,6 +3,7 @@ package cn.bugstack.domain.activity.service;
 import cn.bugstack.domain.activity.model.entity.MarketProductEntity;
 import cn.bugstack.domain.activity.model.entity.TrialBalanceEntity;
 import cn.bugstack.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
+import cn.bugstack.domain.activity.service.trial.node.RootNode;
 import cn.bugstack.types.design.framework.tree.StrategyHandler;
 import org.springframework.stereotype.Service;
 
