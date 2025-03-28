@@ -52,6 +52,7 @@ public class TagRepository implements ITagRepository {
         crowdTagsDetailReq.setUserId(userId);
 
         try {
+            // 数据库已有数据会导致写入不了Redis
             crowdTagsDetailDao.addCrowdTagsUserId(crowdTagsDetailReq);
 
             // 获取BitSet

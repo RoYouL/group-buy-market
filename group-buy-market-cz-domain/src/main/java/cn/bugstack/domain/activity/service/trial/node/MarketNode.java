@@ -38,6 +38,8 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
     private Map<String, IDiscountCalculateService> discountCalculateServiceMap;
     @Resource
     private ErrorNode errorNode;
+    @Resource
+    private TagNode tagNode;
 
 
 
@@ -95,6 +97,6 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
             return errorNode;
         }
 
-        return endNode;
+        return tagNode;
     }
 }
