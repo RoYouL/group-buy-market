@@ -10,11 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Date;
 import java.util.Objects;
 
-/**
- * @author Fuzhengwei bugstack.cn @小傅哥
- * @description 拼团活动营销配置值对象
- * @create 2024-12-21 09:39
- */
 @Getter
 @Builder
 @AllArgsConstructor
@@ -100,7 +95,7 @@ public class GroupBuyActivityDiscountVO {
      * 只要存在这样一个值，那么首次获得的默认值就是 false
      */
     public boolean isEnable() {
-        if(StringUtils.isBlank(this.tagScope)) return TagScopeEnumVO.ENABLE.getAllow();
+        if(StringUtils.isBlank(this.tagScope)) return TagScopeEnumVO.VISIBLE.getAllow();
         String[] split = this.tagScope.split(Constants.SPLIT);
         if (split.length == 2 && Objects.equals(split[1], "2") && StringUtils.isNotBlank(split[1])) {
             return TagScopeEnumVO.ENABLE.getRefuse();
