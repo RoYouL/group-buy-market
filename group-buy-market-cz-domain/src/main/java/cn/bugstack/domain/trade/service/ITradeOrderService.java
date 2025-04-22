@@ -1,9 +1,6 @@
 package cn.bugstack.domain.trade.service;
 
-import cn.bugstack.domain.trade.model.entity.MarketPayOrderEntity;
-import cn.bugstack.domain.trade.model.entity.PayActivityEntity;
-import cn.bugstack.domain.trade.model.entity.PayDiscountEntity;
-import cn.bugstack.domain.trade.model.entity.UserEntity;
+import cn.bugstack.domain.trade.model.entity.*;
 import cn.bugstack.domain.trade.model.valobj.GroupBuyProgressVO;
 
 /**
@@ -38,6 +35,6 @@ public interface ITradeOrderService {
      * @param payDiscountEntity 拼团，支付优惠实体对象
      * @return 拼团，预购订单营销实体对象
      */
-    MarketPayOrderEntity lockMarketPayOrder(UserEntity userEntity, PayActivityEntity payActivityEntity, PayDiscountEntity payDiscountEntity);
+    MarketPayOrderEntity lockMarketPayOrder(UserEntity userEntity, PayActivityEntity payActivityEntity, PayDiscountEntity payDiscountEntity) throws Exception;
 
 }

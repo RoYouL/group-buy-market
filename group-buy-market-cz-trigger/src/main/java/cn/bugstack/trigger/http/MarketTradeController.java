@@ -19,13 +19,16 @@ import cn.bugstack.types.exception.AppException;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Objects;
 
+/**
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 营销交易服务
+ * @create 2025-01-11 14:01
+ */
 @Slf4j
 @RestController()
 @CrossOrigin("*")
@@ -38,8 +41,12 @@ public class MarketTradeController implements IMarketTradeService {
     @Resource
     private ITradeOrderService tradeOrderService;
 
+    /**
+     * 拼团营销锁单
+     */
+    @RequestMapping(value = "lock_market_pay_order", method = RequestMethod.POST)
     @Override
-    public Response<LockMarketPayOrderResponseDTO> lockMarketPayOrder(LockMarketPayOrderRequestDTO lockMarketPayOrderRequestDTO) {
+    public Response<LockMarketPayOrderResponseDTO> lockMarketPayOrder(@RequestBody LockMarketPayOrderRequestDTO lockMarketPayOrderRequestDTO) {
         try {
             // 参数
             String userId = lockMarketPayOrderRequestDTO.getUserId();
@@ -97,9 +104,17 @@ public class MarketTradeController implements IMarketTradeService {
                     .activityId(activityId)
                     .build());
 
+            // 人群限定
+            if (!trialBalanceEntity.getIsVisible() || !trialBalanceEntity.getIsEnable()){
+                return Response.<LockMarketPayOrderResponseDTO>builder()
+                        .code(ResponseCode.E0007.getCode())
+                        .info(ResponseCode.E0007.getInfo())
+                        .build();
+            }
+
             GroupBuyActivityDiscountVO groupBuyActivityDiscountVO = trialBalanceEntity.getGroupBuyActivityDiscountVO();
 
-            // 锁单
+            // 营销优惠锁单
             marketPayOrderEntity = tradeOrderService.lockMarketPayOrder(
                     UserEntity.builder().userId(userId).build(),
                     PayActivityEntity.builder()
@@ -117,6 +132,7 @@ public class MarketTradeController implements IMarketTradeService {
                             .goodsName(trialBalanceEntity.getGoodsName())
                             .originalPrice(trialBalanceEntity.getOriginalPrice())
                             .deductionPrice(trialBalanceEntity.getDeductionPrice())
+                            .payPrice(trialBalanceEntity.getPayPrice())
                             .outTradeNo(outTradeNo)
                             .build());
 
