@@ -27,6 +27,7 @@ public class MarketTradeControllerTest {
     @Resource
     private IMarketTradeService marketTradeService;
 
+    //    作为团长发起一个新的团
     @Test
     public void test_lockMarketPayOrder() {
         LockMarketPayOrderRequestDTO lockMarketPayOrderRequestDTO = new LockMarketPayOrderRequestDTO();
@@ -43,6 +44,7 @@ public class MarketTradeControllerTest {
         log.info("测试结果 req:{} res:{}", JSON.toJSONString(lockMarketPayOrderRequestDTO), JSON.toJSONString(lockMarketPayOrderResponseDTOResponse));
     }
 
+    //    加入一个已存在的团购
     @Test
     public void test_lockMarketPayOrder_teamId_not_null() {
         LockMarketPayOrderRequestDTO lockMarketPayOrderRequestDTO = new LockMarketPayOrderRequestDTO();
