@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import cn.bugstack.infrastructure.dao.po.base.Page;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -17,7 +18,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GroupBuyOrderList {
+public class GroupBuyOrderList extends Page {
 
     /** 自增ID */
     private Long id;
