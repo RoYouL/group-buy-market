@@ -8,53 +8,49 @@ import cn.bugstack.infrastructure.dao.po.*;
 import cn.bugstack.infrastructure.dcc.DCCService;
 import cn.bugstack.infrastructure.redis.IRedisService;
 import org.redisson.api.RBitSet;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 活动仓储
+ * @create 2024-12-21 10:10
+ */
 @Repository
-public class ActivityRepository implements IActivityRepository {
+public class ActivityRepository extends AbstractRepository implements IActivityRepository {
 
-    private static final Logger log = LoggerFactory.getLogger(ActivityRepository.class);
     @Resource
     private IGroupBuyActivityDao groupBuyActivityDao;
-
     @Resource
     private IGroupBuyDiscountDao groupBuyDiscountDao;
-
     @Resource
     private ISkuDao skuDao;
-
     @Resource
     private ISCSkuActivityDao skuActivityDao;
-
     @Resource
     private IRedisService redisService;
-
     @Resource
     private DCCService dccService;
-
     @Resource
     private IGroupBuyOrderDao groupBuyOrderDao;
-
     @Resource
     private IGroupBuyOrderListDao groupBuyOrderListDao;
 
     @Override
     public GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(Long activityId) {
-        //  先查询活动，没有活动直接返回
-        GroupBuyActivity groupBuyActivityRes = groupBuyActivityDao.queryValidGroupBuyActivityId(activityId);
+        // 优先从缓存获取&写缓存，注意如果实现了后台配置，在更新时要更库，删缓存。
+        GroupBuyActivity groupBuyActivityRes = getFromCacheOrDb(GroupBuyActivity.cacheRedisKey(activityId),
+                () -> groupBuyActivityDao.queryValidGroupBuyActivityId(activityId));
         if (null == groupBuyActivityRes) return null;
 
-        //  获取其折扣ID
         String discountId = groupBuyActivityRes.getDiscountId();
 
-        //  查询折扣信息，没有折扣直接返回
-        GroupBuyDiscount groupBuyDiscountRes = groupBuyDiscountDao.queryGroupBuyActivityDiscountByDiscountId(discountId);
+        // 优先从缓存获取&写缓存
+        GroupBuyDiscount groupBuyDiscountRes = getFromCacheOrDb(GroupBuyDiscount.cacheRedisKey(discountId),
+                () -> groupBuyDiscountDao.queryGroupBuyActivityDiscountByDiscountId(discountId));
         if (null == groupBuyDiscountRes) return null;
 
         GroupBuyActivityDiscountVO.GroupBuyDiscount groupBuyDiscount = GroupBuyActivityDiscountVO.GroupBuyDiscount.builder()
@@ -80,7 +76,6 @@ public class ActivityRepository implements IActivityRepository {
                 .tagId(groupBuyActivityRes.getTagId())
                 .tagScope(groupBuyActivityRes.getTagScope())
                 .build();
-
     }
 
     @Override
@@ -238,6 +233,10 @@ public class ActivityRepository implements IActivityRepository {
         // 1. 根据活动ID查询拼团队伍
         List<GroupBuyOrderList> groupBuyOrderLists = groupBuyOrderListDao.queryInProgressUserGroupBuyOrderDetailListByActivityId(activityId);
 
+        if (null == groupBuyOrderLists || groupBuyOrderLists.isEmpty()) {
+            return new TeamStatisticVO(0, 0, 0);
+        }
+
         // 2. 过滤队伍获取 TeamId
         Set<String> teamIds = groupBuyOrderLists.stream()
                 .map(GroupBuyOrderList::getTeamId)
@@ -256,4 +255,5 @@ public class ActivityRepository implements IActivityRepository {
                 .allTeamUserCount(allTeamUserCount)
                 .build();
     }
+
 }
