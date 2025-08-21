@@ -43,6 +43,19 @@
             <groupId>cn.bugstack</groupId>
             <artifactId>group-buy-market-cz-types</artifactId>
         </dependency>
+        <!-- 扳手工程；设计模式框架 -->
+        <dependency>
+            <groupId>cn.bugstack.wrench</groupId>
+            <artifactId>xfg-wrench-starter-design-framework</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>*</artifactId> </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>*</artifactId> </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 
     <build>
