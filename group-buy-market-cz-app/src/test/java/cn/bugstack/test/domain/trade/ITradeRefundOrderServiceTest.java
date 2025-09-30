@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * 逆向流程单测
@@ -27,10 +28,10 @@ public class ITradeRefundOrderServiceTest {
     private ITradeRefundOrderService tradeRefundOrderService;
 
     @Test
-    public void test_refundOrder() {
+    public void test_refundOrder() throws Exception {
         TradeRefundCommandEntity tradeRefundCommandEntity = TradeRefundCommandEntity.builder()
-                .userId("cz02")
-                .outTradeNo("734350623795")
+                .userId("xfg02")
+                .outTradeNo("061974054911")
                 .source("s01")
                 .channel("c01")
                 .build();
@@ -39,6 +40,10 @@ public class ITradeRefundOrderServiceTest {
 
         log.info("请求参数:{}", JSON.toJSONString(tradeRefundCommandEntity));
         log.info("测试结果:{}", JSON.toJSONString(tradeRefundBehaviorEntity));
+
+        // 暂停，等待MQ消息。处理完后，手动关闭程序
+        new CountDownLatch(1).await();
+
     }
 
 }
