@@ -1,0 +1,124 @@
+25-09-17.14:26:38.934 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on ASUS with PID 17008 (E:\work\Projects\IdeaProjects\group-buy-market-cz\group-buy-market-cz-app\target\classes started by cz in E:\work\Projects\IdeaProjects\group-buy-market-cz)
+25-09-17.14:26:38.936 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-09-17.14:26:39.663 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-17.14:26:39.665 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-17.14:26:39.718 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
+25-09-17.14:26:39.985 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cn.bugstack.wrench.dynamic.config.center.config.DynamicConfigCenterRegisterAutoConfig' of type [cn.bugstack.wrench.dynamic.config.center.config.DynamicConfigCenterRegisterAutoConfig$$EnhancerBySpringCGLIB$$da7cc459] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.14:26:39.997 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'xfg.wrench.config-cn.bugstack.wrench.dynamic.config.center.config.DynamicConfigCenterAutoProperties' of type [cn.bugstack.wrench.dynamic.config.center.config.DynamicConfigCenterAutoProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.14:26:39.998 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$eb364bc4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.14:26:40.001 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.14:26:40.190 [main            ] INFO  Version                - Redisson 3.26.0
+25-09-17.14:26:40.637 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.116.61.87/47.116.61.87:16379
+25-09-17.14:26:40.751 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.116.61.87/47.116.61.87:16379
+25-09-17.14:26:40.795 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.14:26:40.808 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicConfigCenterService' of type [cn.bugstack.wrench.dynamic.config.center.domain.service.DynamicConfigCenterService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.14:26:40.954 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-09-17.14:26:41.010 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-09-17.14:26:41.016 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-09-17.14:26:41.016 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-09-17.14:26:41.107 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-09-17.14:26:41.107 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2131 ms
+25-09-17.14:26:42.286 [main            ] INFO  Version                - Redisson 3.26.0
+25-09-17.14:26:42.306 [redisson-netty-5-4] INFO  ConnectionsHolder      - 1 connections initialized for 47.116.61.87/47.116.61.87:16379
+25-09-17.14:26:42.430 [main            ] INFO  DynamicConfigCenterRegisterAutoConfig - xfg-wrench，注册器（redis）链接初始化完成。47.116.61.87 64 true
+25-09-17.14:26:42.430 [redisson-netty-5-23] INFO  ConnectionsHolder      - 10 connections initialized for 47.116.61.87/47.116.61.87:16379
+25-09-17.14:26:42.721 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
+25-09-17.14:26:42.779 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-09-17.14:26:42.785 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-09-17.14:26:42.787 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [47.116.61.87:5672]
+25-09-17.14:26:42.860 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#3a5b7d7e:0/SimpleConnection@642c5bb3 [delegate=amqp://admin@47.116.61.87:5672/, localPort= 10204]
+25-09-17.14:26:43.123 [main            ] INFO  Application            - Started Application in 4.497 seconds (JVM running for 5.16)
+25-09-17.14:26:43.385 [RMI TCP Connection(1)-59.79.0.163] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-09-17.14:26:43.385 [RMI TCP Connection(1)-59.79.0.163] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-09-17.14:26:43.386 [RMI TCP Connection(1)-59.79.0.163] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-09-17.14:26:43.956 [RMI TCP Connection(3)-59.79.0.163] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-17.14:26:44.220 [RMI TCP Connection(3)-59.79.0.163] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-17.14:30:45.031 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-17.14:30:45.044 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-17.14:30:45.694 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-17.14:30:45.783 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-17.14:30:46.054 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-17.14:30:46.054 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-17.14:30:46.109 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-17.14:30:46.230 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-17.15:08:29.571 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on ASUS with PID 21404 (E:\work\Projects\IdeaProjects\group-buy-market-cz\group-buy-market-cz-app\target\classes started by cz in E:\work\Projects\IdeaProjects\group-buy-market-cz)
+25-09-17.15:08:29.573 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-09-17.15:08:30.162 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-17.15:08:30.163 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-17.15:08:30.219 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
+25-09-17.15:08:30.458 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cn.bugstack.wrench.dynamic.config.center.config.DynamicConfigCenterRegisterAutoConfig' of type [cn.bugstack.wrench.dynamic.config.center.config.DynamicConfigCenterRegisterAutoConfig$$EnhancerBySpringCGLIB$$da7cc459] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.15:08:30.469 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'xfg.wrench.config-cn.bugstack.wrench.dynamic.config.center.config.DynamicConfigCenterAutoProperties' of type [cn.bugstack.wrench.dynamic.config.center.config.DynamicConfigCenterAutoProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.15:08:30.471 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$eb364bc4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.15:08:30.472 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.15:08:30.596 [main            ] INFO  Version                - Redisson 3.26.0
+25-09-17.15:08:31.012 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.116.61.87/47.116.61.87:16379
+25-09-17.15:08:31.099 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.116.61.87/47.116.61.87:16379
+25-09-17.15:08:31.140 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.15:08:31.151 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicConfigCenterService' of type [cn.bugstack.wrench.dynamic.config.center.domain.service.DynamicConfigCenterService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-09-17.15:08:31.274 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-09-17.15:08:31.324 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-09-17.15:08:31.329 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-09-17.15:08:31.329 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-09-17.15:08:31.410 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-09-17.15:08:31.410 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1778 ms
+25-09-17.15:08:32.556 [main            ] INFO  Version                - Redisson 3.26.0
+25-09-17.15:08:32.576 [redisson-netty-5-5] INFO  ConnectionsHolder      - 1 connections initialized for 47.116.61.87/47.116.61.87:16379
+25-09-17.15:08:32.690 [redisson-netty-5-23] INFO  ConnectionsHolder      - 10 connections initialized for 47.116.61.87/47.116.61.87:16379
+25-09-17.15:08:32.690 [main            ] INFO  DynamicConfigCenterRegisterAutoConfig - xfg-wrench，注册器（redis）链接初始化完成。47.116.61.87 64 true
+25-09-17.15:08:32.972 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
+25-09-17.15:08:33.027 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-09-17.15:08:33.034 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-09-17.15:08:33.035 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [47.116.61.87:5672]
+25-09-17.15:08:33.100 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7d522180:0/SimpleConnection@626df173 [delegate=amqp://admin@47.116.61.87:5672/, localPort= 6768]
+25-09-17.15:08:33.324 [main            ] INFO  Application            - Started Application in 4.076 seconds (JVM running for 4.736)
+25-09-17.15:08:34.071 [RMI TCP Connection(3)-59.79.0.163] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-09-17.15:08:34.071 [RMI TCP Connection(3)-59.79.0.163] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-09-17.15:08:34.073 [RMI TCP Connection(3)-59.79.0.163] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-09-17.15:08:34.084 [RMI TCP Connection(2)-59.79.0.163] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-17.15:08:34.335 [RMI TCP Connection(2)-59.79.0.163] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-17.15:23:46.636 [redisson-netty-5-20] ERROR ErrorsLoggingHandler   - Exception occured. Channel: [id: 0x95096b1e, L:/59.79.0.163:6764 - R:47.116.61.87/47.116.61.87:16379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:378)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-17.15:23:46.636 [redisson-netty-5-12] ERROR ErrorsLoggingHandler   - Exception occured. Channel: [id: 0x5195e907, L:/59.79.0.163:6760 - R:47.116.61.87/47.116.61.87:16379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:378)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-17.15:24:03.452 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-17.15:24:03.469 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-17.15:24:04.086 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-17.15:24:04.206 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-17.15:24:04.513 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-17.15:24:04.513 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-17.15:24:05.111 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-17.15:24:05.278 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
